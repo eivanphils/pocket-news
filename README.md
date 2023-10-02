@@ -19,18 +19,16 @@ Luego abre el archivo main.dart y presiona F5 o fn + F5 app. 
 
 ## Descripción
 
-La app posee 3 pantallas las cuales son:
-- OnBoarding
-- Login Page
-    - Buscador
-    - carrusel de categorias
-    - Carrusel de recetas
-    - BottomNavigationBar
-- Detalle de la receta
+La app posee x pantallas las cuales son:
+- xxxxxx
+- xxxxx
+    - xxx
+    - xxx
+- xxxxx
 
 ## Herramientas externas
 
-Se utiliza el api de [https://www.edamam.com](https://www.edamam.com) para obtener recetas.
+Se utiliza el api de [xxxxx](xxxxx) para obtener las noticias.
 
 
 ## Paquetes de terceros
