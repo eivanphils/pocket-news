@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
+import 'package:provider/provider.dart';
+
+import 'package:pocket_news/providers/providers.dart';
 import 'package:pocket_news/router/app_routes.dart';
 import 'package:pocket_news/theme/app_theme.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(MultiProvider(providers: [
+  ChangeNotifierProvider(create: (_) => NavigationProvider())
+],
+child: const MyApp()));
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
