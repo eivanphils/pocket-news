@@ -31,6 +31,7 @@ class _BottoNavigation extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Explorar'),
+        BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Explorar'),
       ],
     );
   }
@@ -47,6 +48,7 @@ class _Screens extends StatelessWidget {
       controller: nagigationProvider.pageController,
       children: const [
         HomeScreen(),
+        ExplorerScreen(),
         ExplorerScreen(),
       ],
     );

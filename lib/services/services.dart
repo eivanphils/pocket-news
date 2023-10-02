@@ -1,0 +1,1 @@
+export 'package:pocket_news/services/news_service.dart';
