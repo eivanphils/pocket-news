@@ -29,9 +29,9 @@ class _BottoNavigation extends StatelessWidget {
       currentIndex: navigationProvider.currentScreen,
       onTap: (int index) => navigationProvider.currentScreen = index,
       items: const [
-        BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Home'),
-        BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Explorar'),
-        BottomNavigationBarItem(icon: Icon(Icons.abc), label: 'Explorar'),
+        BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.search_outlined), label: 'Explore'),
+        BottomNavigationBarItem(icon: Icon(Icons.person_outlined), label: 'Profile'),
       ],
     );
   }
@@ -48,8 +48,8 @@ class _Screens extends StatelessWidget {
       controller: nagigationProvider.pageController,
       children: const [
         HomeScreen(),
-        ExplorerScreen(),
-        ExplorerScreen(),
+        ExploreScreen(),
+        ExploreScreen(),
       ],
     );
   }
