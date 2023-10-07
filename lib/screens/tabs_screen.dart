@@ -49,7 +49,7 @@ class _Screens extends StatelessWidget {
       children: const [
         HomeScreen(),
         ExploreScreen(),
-        ExploreScreen(),
+        ProfileScreen(),
       ],
     );
   }

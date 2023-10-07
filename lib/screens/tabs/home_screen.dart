@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:provider/provider.dart';
 
+import 'package:pocket_news/widgets/widgets.dart';
 import 'package:pocket_news/services/services.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,12 +10,25 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final newsService = Provider.of<NewsService>(context, listen: false);
+    final newsService = Provider.of<NewsService>(context);
 
-    print('newsService $newsService');
-    return const Scaffold(
-      body: Center(
-        child: Text('Tab1Screen'),
+    return Scaffold(
+      appBar: const CustomHeader(),
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            NewsList(news: newsService.headlines, title: 'News Trending'),
+            NewsList(news: newsService.headlines, title: 'Most Relevant'),
+            
+            Container(
+              color: Colors.indigo,
+              height: 550,
+              child: ListView.builder(
+                  itemCount: 200,
+                  itemBuilder: (context, index) => Text('Texto $index')),
+            )
+          ],
+        ),
       ),
     );
   }
