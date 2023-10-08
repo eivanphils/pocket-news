@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'package:pocket_news/models/article_model.dart';
-import 'package:pocket_news/services/news_service.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
+
+import 'package:pocket_news/services/news_service.dart';
+import 'package:pocket_news/models/article_model.dart';
 
 class NewsList extends StatelessWidget {
   final List<Article> news;

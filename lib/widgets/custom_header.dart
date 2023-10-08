@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_news/services/news_service.dart';
+import 'package:pocket_news/providers/providers.dart';
 import 'package:provider/provider.dart';
 
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget{
@@ -8,7 +8,7 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget{
 
   @override
   Widget build(BuildContext context) {
-    final newsService = Provider.of<NewsService>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
 
     return AppBar(
       title: Text(title),
@@ -18,8 +18,8 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget{
             backgroundColor: Colors.white,
             child: IconButton(
                 color: Colors.black,
-                onPressed: () => newsService.changeThemeMode(),
-                icon: Icon(newsService.isDarMode
+                onPressed: () => themeProvider.setMode(),
+                icon: Icon(themeProvider.isDarkMode
                     ? Icons.light_mode
                     : Icons.dark_mode))),
         const SizedBox(
