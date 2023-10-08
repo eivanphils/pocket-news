@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 
 import 'package:pocket_news/models/article_model.dart';
+import 'package:pocket_news/services/news_service.dart';
+import 'package:provider/provider.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class NewsList extends StatelessWidget {
   final List<Article> news;
@@ -9,6 +12,7 @@ class NewsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final newsService = Provider.of<NewsService>(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -19,16 +23,84 @@ class NewsList extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
                 ))),
-        SizedBox(
-            height: 350,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: news.length,
-                itemBuilder: (context, index) {
-                  return _Card(newInfo: news[index], index: index);
-                })),
+        newsService.isLoading
+            ? const _SkeletonCard()
+            : _CardsContent(news: news),
       ],
     );
+  }
+}
+
+class _SkeletonCard extends StatelessWidget {
+  const _SkeletonCard({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 350,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: 5,
+          itemBuilder: (context, index) {
+            return Skeletonizer(
+                enabled: true,
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Card(
+                    child: Container(
+                      padding: const EdgeInsets.all(20),
+                      width: 260,
+                      height: 253,
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Container(
+                            width: double.infinity,
+                            height: 122,
+                            decoration: BoxDecoration(
+                                color: Colors.blueGrey[400],
+                                borderRadius: BorderRadius.circular(10)),
+                          ),
+                          const SizedBox(
+                            height: 20,
+                          ),
+                          const Text('loading news info data'),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Text('loading news info data'),
+                          const SizedBox(
+                            height: 5,
+                          ),
+                          const Text('loading news info data'),
+                        ],
+                      ),
+                    ),
+                  ),
+                ));
+          }),
+    );
+  }
+}
+
+class _CardsContent extends StatelessWidget {
+  const _CardsContent({
+    super.key,
+    required this.news,
+  });
+
+  final List<Article> news;
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+        height: 350,
+        child: ListView.builder(
+            scrollDirection: Axis.horizontal,
+            itemCount: news.length,
+            itemBuilder: (context, index) {
+              return _Card(newInfo: news[index], index: index);
+            }));
   }
 }
 
@@ -50,12 +122,18 @@ class _Card extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               _TopImage(newInfo: newInfo),
-              const SizedBox(height: 20,),
-              if(newInfo.author != null)
+              const SizedBox(
+                height: 20,
+              ),
+              if (newInfo.author != null)
                 _Author(author: newInfo.author.toString()),
-                const SizedBox(height: 5,),
+              const SizedBox(
+                height: 5,
+              ),
               _Title(newInfo: newInfo),
-              const SizedBox(height: 5,),
+              const SizedBox(
+                height: 5,
+              ),
               _BottomInfo(newInfo: newInfo)
 
               // TODO: aplicar estilos a los textos

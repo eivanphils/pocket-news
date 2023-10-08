@@ -24,7 +24,7 @@ class HomeScreen extends StatelessWidget {
               color: Colors.indigo,
               height: 550,
               child: ListView.builder(
-                  itemCount: 200,
+                  itemCount: 10,
                   itemBuilder: (context, index) => Text('Texto $index')),
             )
           ],

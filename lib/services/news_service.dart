@@ -8,10 +8,13 @@ class NewsService extends ChangeNotifier {
   final String _apiKey = '79a9a912c9bf4187bb408209386be3dd';
   final String _baseUrl = 'newsapi.org';
   bool isDarMode = true;
+  bool isLoading = false;
 
   List<Article> headlines = [];
 
   NewsService() {
+    isLoading = true;
+    notifyListeners();
     getTopHeadLines();
   }
 
@@ -23,6 +26,7 @@ class NewsService extends ChangeNotifier {
 
     headlines.addAll(apiResponse.articles);
 
+    isLoading = false;
     notifyListeners();
   }
 
