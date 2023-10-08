@@ -23,7 +23,9 @@ class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMi
       body: SingleChildScrollView(
         child: Column(
           children: [
+            const SizedBox(height: 30,),
             NewsList(news: newsService.headlines, title: 'News Trending'),
+            const SizedBox(height: 30,),
             NewsList(news: newsService.headlines, title: 'Most Relevant'),
             
             Container(
