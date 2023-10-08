@@ -4,7 +4,7 @@ import 'package:pocket_news/shared_preferences/preferences.dart';
 import 'package:pocket_news/theme/app_theme.dart';
 
 class ThemeProvider extends ChangeNotifier {
-  bool isDarkMode = true;
+  bool isDarkMode = Preferences.isDarkMode;
   ThemeData currentTheme;
 
   ThemeProvider({required bool isDark})

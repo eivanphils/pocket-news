@@ -7,7 +7,6 @@ import 'package:pocket_news/models/models.dart';
 class NewsService extends ChangeNotifier {
   final String _apiKey = '79a9a912c9bf4187bb408209386be3dd';
   final String _baseUrl = 'newsapi.org';
-  bool isDarMode = true;
   bool isLoading = false;
 
   List<Article> headlines = [];
@@ -37,10 +36,5 @@ class NewsService extends ChangeNotifier {
     final response = await http.get(url);
 
     return response.body;
-  }
-
-  void changeThemeMode() {
-    isDarMode = !isDarMode;
-    notifyListeners();
   }
 }

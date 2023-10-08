@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_news/providers/providers.dart';
+
 import 'package:provider/provider.dart';
+
+import 'package:pocket_news/providers/providers.dart';
 
 class CustomHeader extends StatelessWidget implements PreferredSizeWidget{
   final String title;
