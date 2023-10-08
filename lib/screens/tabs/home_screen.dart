@@ -5,11 +5,17 @@ import 'package:provider/provider.dart';
 import 'package:pocket_news/widgets/widgets.dart';
 import 'package:pocket_news/services/services.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with AutomaticKeepAliveClientMixin{
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     final newsService = Provider.of<NewsService>(context);
 
     return Scaffold(
@@ -32,4 +38,7 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+  
+  @override
+  bool get wantKeepAlive => true;
 }
