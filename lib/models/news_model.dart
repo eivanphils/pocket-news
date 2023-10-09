@@ -23,7 +23,7 @@ class NewsResponse {
 
     factory NewsResponse.fromJson(Map<String, dynamic> json) => NewsResponse(
         status: json["status"],
-        totalResults: json["totalResults"],
+        totalResults: json["totalResults"] ?? 0,
         articles: List<Article>.from(json["articles"].map((x) => Article.fromJson(x))),
     );
 

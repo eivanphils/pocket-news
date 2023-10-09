@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import 'package:pocket_news/screens/screens.dart';
 import 'package:pocket_news/extensions/string_extension.dart';
 import 'package:pocket_news/services/news_service.dart';
 import 'package:pocket_news/models/article_model.dart';
@@ -112,31 +113,35 @@ class _Card extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 16),
-      child: Card(
-        child: Container(
-          padding: const EdgeInsets.all(20),
-          width: 260,
-          height: 253,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              _TopImage(newInfo: newInfo),
-              const SizedBox(
-                height: 20,
-              ),
-              if (newInfo.author != null)
-                _Author(author: newInfo.author.toString()),
-              const SizedBox(
-                height: 5,
-              ),
-              _Title(newInfo: newInfo),
-              const SizedBox(
-                height: 5,
-              ),
-              _BottomInfo(newInfo: newInfo)
-            ],
+    return GestureDetector(
+      onTap: () => Navigator.pushNamed(context, NewsDetailScreen.routeName,
+          arguments: newInfo),
+      child: Container(
+        margin: const EdgeInsets.symmetric(horizontal: 16),
+        child: Card(
+          child: Container(
+            padding: const EdgeInsets.all(20),
+            width: 260,
+            height: 253,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                _TopImage(newInfo: newInfo),
+                const SizedBox(
+                  height: 20,
+                ),
+                if (newInfo.author != null)
+                  _Author(author: newInfo.author.toString()),
+                const SizedBox(
+                  height: 5,
+                ),
+                Expanded(child: _Title(newInfo: newInfo)),
+                const SizedBox(
+                  height: 5,
+                ),
+                _BottomInfo(newInfo: newInfo)
+              ],
+            ),
           ),
         ),
       ),
@@ -198,7 +203,7 @@ class _Title extends StatelessWidget {
       newInfo.title,
       style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w700),
       overflow: TextOverflow.ellipsis,
-      maxLines: 2,
+      maxLines: 4,
       softWrap: false,
     );
   }
@@ -213,6 +218,13 @@ class _BottomInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text('${newInfo.publishedAt.toString()} - ${newInfo.source.name} ');
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text('${newInfo.source.name} '),
+        Text('${newInfo.formatPublishedAt}'),
+      ],
+    );
   }
 }

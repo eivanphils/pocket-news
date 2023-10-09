@@ -7,7 +7,9 @@ class AppRoutes {
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
     Map<String, Widget Function(BuildContext)> appRoutes = {
-      TabsScreen.routeName: (BuildContext context) => const TabsScreen()
+      TabsScreen.routeName: (BuildContext context) => const TabsScreen(),
+      NewsDetailScreen.routeName: (BuildContext context) =>
+          const NewsDetailScreen()
     };
 
     return appRoutes;
