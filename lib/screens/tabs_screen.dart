@@ -31,7 +31,6 @@ class _BottoNavigation extends StatelessWidget {
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Home'),
         BottomNavigationBarItem(icon: Icon(Icons.search_outlined), label: 'Explore'),
-        BottomNavigationBarItem(icon: Icon(Icons.person_outlined), label: 'Profile'),
       ],
     );
   }
@@ -49,7 +48,6 @@ class _Screens extends StatelessWidget {
       children: const [
         HomeScreen(),
         ExploreScreen(),
-        ProfileScreen(),
       ],
     );
   }
