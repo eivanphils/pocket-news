@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import 'package:pocket_news/widgets/widgets.dart';
 import 'package:pocket_news/screens/screens.dart';
 import 'package:pocket_news/extensions/string_extension.dart';
 import 'package:pocket_news/services/news_service.dart';
@@ -126,7 +127,7 @@ class _Card extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _TopImage(newInfo: newInfo),
+                TopImage(newInfo: newInfo),
                 const SizedBox(
                   height: 20,
                 ),
@@ -144,31 +145,6 @@ class _Card extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
-  }
-}
-
-class _TopImage extends StatelessWidget {
-  const _TopImage({
-    required this.newInfo,
-  });
-
-  final Article newInfo;
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10),
-      child: FadeInImage(
-        placeholder: const AssetImage('assets/giphy.gif'),
-        image: newInfo.urlToImage != null
-            ? NetworkImage(newInfo.urlToImage!)
-            : const AssetImage('assets/no-image.png') as ImageProvider<Object>,
-        height: 122,
-        width: double.infinity,
-        fit: BoxFit.cover,
-        fadeInDuration: const Duration(milliseconds: 300),
       ),
     );
   }
