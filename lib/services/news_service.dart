@@ -48,6 +48,8 @@ class NewsService extends ChangeNotifier {
   }
 
   void getNewsByCategory({required String category}) async {
+    isLoading = true;
+    notifyListeners();
     final jsonData = await _getJsonData(
         endpoint: 'v2/top-headlines', country: 'us', category: category);
     final apiResponse = newsResponseFromJson(jsonData);

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
+import 'package:pocket_news/extensions/string_extension.dart';
 import 'package:pocket_news/services/news_service.dart';
 import 'package:pocket_news/models/article_model.dart';
 
@@ -19,7 +20,7 @@ class NewsList extends StatelessWidget {
       children: [
         Padding(
             padding: const EdgeInsets.only(left: 20, bottom: 10),
-            child: Text(title,
+            child: Text(title.capitalize(),
                 style: const TextStyle(
                   fontSize: 16,
                   fontWeight: FontWeight.w600,
