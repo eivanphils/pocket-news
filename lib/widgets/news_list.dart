@@ -33,7 +33,7 @@ class NewsList extends StatelessWidget {
 }
 
 class _SkeletonCard extends StatelessWidget {
-  const _SkeletonCard({super.key});
+  const _SkeletonCard();
 
   @override
   Widget build(BuildContext context) {
@@ -86,7 +86,6 @@ class _SkeletonCard extends StatelessWidget {
 
 class _CardsContent extends StatelessWidget {
   const _CardsContent({
-    super.key,
     required this.news,
   });
 
@@ -108,7 +107,7 @@ class _CardsContent extends StatelessWidget {
 class _Card extends StatelessWidget {
   final Article newInfo;
   final int index;
-  const _Card({super.key, required this.newInfo, required this.index});
+  const _Card({required this.newInfo, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -136,8 +135,6 @@ class _Card extends StatelessWidget {
                 height: 5,
               ),
               _BottomInfo(newInfo: newInfo)
-
-              // TODO: aplicar estilos a los textos
             ],
           ),
         ),
@@ -148,7 +145,6 @@ class _Card extends StatelessWidget {
 
 class _TopImage extends StatelessWidget {
   const _TopImage({
-    super.key,
     required this.newInfo,
   });
 
@@ -174,7 +170,7 @@ class _TopImage extends StatelessWidget {
 
 class _Author extends StatelessWidget {
   final String author;
-  const _Author({super.key, required this.author});
+  const _Author({required this.author});
 
   @override
   Widget build(BuildContext context) {
@@ -190,7 +186,6 @@ class _Author extends StatelessWidget {
 
 class _Title extends StatelessWidget {
   const _Title({
-    super.key,
     required this.newInfo,
   });
 
@@ -210,7 +205,6 @@ class _Title extends StatelessWidget {
 
 class _BottomInfo extends StatelessWidget {
   const _BottomInfo({
-    super.key,
     required this.newInfo,
   });
 
