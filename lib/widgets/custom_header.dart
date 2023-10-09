@@ -25,14 +25,13 @@ class CustomHeader extends StatelessWidget implements PreferredSizeWidget{
                     ? Icons.light_mode
                     : Icons.dark_mode))),
         const SizedBox(
-          width: 5,
+          width: 10,
         )
       ],
     );
   }
   
   @override
-  // TODO: implement preferredSize
     Size get preferredSize => const Size.fromHeight(60);
 
 }
