@@ -11,7 +11,9 @@ class NewsService extends ChangeNotifier {
 
   List<Article> headlines = [];
   List<Article> randomNews = [];
-  List<Article> newsByCategory = [];
+
+  Map<String, List<Article>> newsByCategory = {};
+
   List<Category> categories = [
     Category(Icons.work, 'business'),
     Category(Icons.tv, 'entertainment'),
@@ -24,15 +26,24 @@ class NewsService extends ChangeNotifier {
 
   String _selectedCategory = 'business';
 
-  set selectedCategory(category) => _selectedCategory = category;
+  set selectedCategory(String category) {
+    isLoading = true;
+    _selectedCategory = category;
+    notifyListeners();
+    getNewsByCategory(category: category);
+  }
 
   String get selectedCategory => _selectedCategory;
 
   NewsService() {
+    for (final item in categories) {
+      newsByCategory.addAll({item.name: []});
+    }
     isLoading = true;
     notifyListeners();
     getTopHeadLines();
     getRandomNews(query: 'world');
+
     getNewsByCategory(category: categories[0].name);
   }
 
@@ -48,13 +59,16 @@ class NewsService extends ChangeNotifier {
   }
 
   void getNewsByCategory({required String category}) async {
-    isLoading = true;
-    notifyListeners();
+    if (newsByCategory[category]!.isNotEmpty) {
+      isLoading = false;
+      return;
+    }
     final jsonData = await _getJsonData(
         endpoint: 'v2/top-headlines', country: 'us', category: category);
     final apiResponse = newsResponseFromJson(jsonData);
 
-    newsByCategory.addAll(apiResponse.articles);
+    newsByCategory[category]!.addAll(apiResponse.articles);
+
 
     isLoading = false;
     notifyListeners();

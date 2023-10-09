@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pocket_news/models/category_model.dart';
 
 import 'package:provider/provider.dart';
 
+import 'package:pocket_news/models/models.dart';
 import 'package:pocket_news/extensions/string_extension.dart';
 import 'package:pocket_news/widgets/widgets.dart';
 import 'package:pocket_news/services/news_service.dart';
@@ -31,7 +31,7 @@ class ExploreScreen extends StatelessWidget {
             height: 10,
           ),
           NewsList(
-              news: newsService.newsByCategory,
+              news: newsService.newsByCategory[newsService.selectedCategory]!,
               title: newsService.selectedCategory),
         ],
       ),
@@ -84,7 +84,6 @@ class _CategoryButton extends StatelessWidget {
       selected: newsService.selectedCategory == category.name,
       onSelected: (bool selected) {
         newsService.selectedCategory = category.name;
-        newsService.getNewsByCategory(category: category.name);
       },
     );
   }
