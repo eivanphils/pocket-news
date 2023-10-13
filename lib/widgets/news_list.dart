@@ -127,7 +127,9 @@ class _Card extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                TopImage(newInfo: newInfo),
+                Hero(
+                  tag: newInfo.publishedAt,
+                  child: TopImage(newInfo: newInfo)),
                 const SizedBox(
                   height: 20,
                 ),

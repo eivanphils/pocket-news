@@ -41,9 +41,12 @@ class NewsDetailScreen extends StatelessWidget {
             const SizedBox(
               height: 25,
             ),
-            TopImage(
-              newInfo: newInfo,
-              height: 190,
+            Hero(
+              tag: newInfo.publishedAt,
+              child: TopImage(
+                newInfo: newInfo,
+                height: 190,
+              ),
             ),
             const SizedBox(
               height: 10,
