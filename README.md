@@ -78,31 +78,29 @@ Luego el directorio lib
 ## Capturas de pantalla
 
 ### DarkMode:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/darkmode.png" width="200">
 
 ### LightMode:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/lightmode.png" width="200">
 
 ### Explore:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/explore.png" width="200">
 
 ### Loading:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/loading.png" width="200">
 
 ### News Detail Dark:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/news-detail-dark.png" width="200">
 
 ### News Detail Light:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/news-detail-light.png" width="200">
 
 ### Webview:
-https://github.com/eivanphils/pocket-news
 <img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/webview.png" width="200">
 
 ### Videos
+
+https://github.com/eivanphils/pocket-news/assets/1909869/b8bbdcdf-1ec0-4364-928c-ce479114a3f6
+
+https://github.com/eivanphils/pocket-news/assets/1909869/777bb32b-2537-4256-a0b6-5702faf8930c
+
