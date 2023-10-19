@@ -2,6 +2,8 @@
 
 Esta es una aplicación con flutter que consume servicios desde un api pública de noticias, donde se logra mostrar una variedad de noticias segmentadas por categorías y donde se puede ver el detalle de cada una de ella.
 
+Es importante saber que este tipo de aplicaciones pueden ser desplegadas en moviles como android e ios asi como tambien como aplicaciones de escritorio para macOS, Linux, Windows y Web
+
 ---
 
 ## Levantar el proyecto
@@ -19,16 +21,18 @@ Luego abre el archivo main.dart y presiona F5 o fn + F5 app. 
 
 ## Descripción
 
-La app posee x pantallas las cuales son:
-- xxxxxx
-- xxxxx
-    - xxx
-    - xxx
-- xxxxx
+#### Características que posee la app:
+- Home.
+    - Detalle de la noticia.
+- Explore.
+    - Detalle de la noticia.
+
+- Botón para cambio de tema claro/oscuro.
+- Link en webview. 
 
 ## Herramientas externas
 
-Se utiliza el api de [xxxxx](xxxxx) para obtener las noticias.
+Se utiliza el api de [https://newsapi.org](https://newsapi.org) para obtener las noticias.
 
 
 ## Paquetes de terceros
@@ -43,6 +47,10 @@ A continuación encontrará la información sobre estos paquetes.
 | providers  | Manejador de estados |
 | http  | Peticiones http |
 | flutter_launcher_icons  | Librería para configurar icono y splash screen |
+| url_launcher | Librería para mostrar una pagina web interna |
+| skeletonizer | Librería para crear esqueletos de cargas |
+| shared_preferences | Librería para guardar datos en el dispositivo  |
+| intl | Librería para el formateo de fechas |
 
 
 ## Estructura de directorio
@@ -69,6 +77,32 @@ Luego el directorio lib
 
 ## Capturas de pantalla
 
-### Onboarding:
+### DarkMode:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/darkmode.png" width="200">
 
-<img src="https://github.com/eivanphils/Tasty-Trove/blob/master/assets/screenshoot/onboarding.png" width="200">   
+### LightMode:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/lightmode.png" width="200">
+
+### Explore:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/explore.png" width="200">
+
+### Loading:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/loading.png" width="200">
+
+### News Detail Dark:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/news-detail-dark.png" width="200">
+
+### News Detail Light:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/news-detail-light.png" width="200">
+
+### Webview:
+https://github.com/eivanphils/pocket-news
+<img src="https://github.com/eivanphils/pocket-news/blob/master/assets/screenshoot/webview.png" width="200">
+
+### Videos
